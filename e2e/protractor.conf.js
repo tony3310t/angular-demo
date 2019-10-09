@@ -13,15 +13,19 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    '//chromeOptions': {
+      args: ["--headless", "--disable-gpu", "--window-size=800x600"]
+    }
   },
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    print: function () { }
   },
   onPrepare() {
     require('ts-node').register({

@@ -1,0 +1,68 @@
+<p-panel header="Sentence Generate" [style]="{'margin-bottom':'20px'}">
+  <div class="container-fluid top">
+    <div class="row top">
+      <div class="col-md-2" style="text-align: right">
+        <h4>Subject</h4>
+      </div>
+      <div class="col-md-2">
+        <input id="idSubject" name="nameSubject" class="form-control" type="text" [(ngModel)]="subject">
+      </div>
+      <div class="col-md-2" style="text-align: right">
+        <h4>Verbs</h4>
+      </div>
+      <div class="col-md-2">
+        <input id="idVerbs" name="nameVerbs" class="form-control" type="text" [(ngModel)]="verbs">
+      </div>
+      <div class="col-md-2" style="text-align: right">
+        <h4>Object</h4>
+      </div>
+      <div class="col-md-2">
+        <input id="idObject" name="nameObject" class="form-control" type="text" [(ngModel)]="object">
+      </div>
+    </div>
+    <div class="row top">
+      <div class="col-md-12" style="text-align: center">
+        <p-button id="idGobutton" name="nameGobutton" label="Click me!" (click)="onClickMe()"></p-button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 id="idResult" name="nameResult" class="alert-heading">{{sentence}}</h4>
+      </div>
+    </div>
+  </div>
+</p-panel>
+
+<p-panel header="Fibonacci" [style]="{'margin-bottom':'20px'}">
+  <div class="container-fluid top">
+    <div class="row top">
+      <div class="col-md-4">
+        <input id="idFibonacciLevel" name="nameFibonacciLevel" class="form-control" type="text" [(ngModel)]="fibonacciLevel">
+        <h4 id="idFibonacciLevelError" *ngIf="isShowFibonacciCollections">Please input a number greater than 2.</h4>
+      </div>
+      <div class="col-md-4">
+        <p-button id="idFibonacciButton" name="nameFibonacciButton" label="Generate" (click)="onClickFibonacciButton()"></p-button>
+      </div>
+      <div class="col-md-4">
+        <div id="idCollections" *ngFor="let item of collections;let recordIndex = index;">
+          <h4 id="idItem" class="badge badge-pill badge-secondary" name="nameItem">{{item}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-panel>
+
+<p-panel header="RadioButton" [style]="{'margin-bottom':'20px'}">
+  <div class="container-fluid top">
+    <div class="row top">
+      <div class="col-md-12">
+        <div class="ui-g" style="width:250px;margin-bottom:10px">
+          <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" label="Option 1" [(ngModel)]="rbValue" inputId="idOpt1"></p-radioButton></div>
+          <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" label="Option 2" [(ngModel)]="rbValue" inputId="idOpt2"></p-radioButton></div>
+          <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" label="Option 3" [(ngModel)]="rbValue" inputId="idOpt3"></p-radioButton></div>
+      </div>
+      <h4 id="idRbValue" class="badge badge-pill badge-secondary" name="nameRbValue">{{rbValue}}</h4>
+      </div>
+    </div>
+  </div>
+</p-panel>
